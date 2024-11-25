@@ -1,0 +1,12 @@
+[
+    {
+        "questionText": "Dünya kaç günde Güneş etrafında döner?",
+        "answers": ["365", "366", "364", "360"],
+        "correctAnswerIndex": 0
+    },
+    {
+        "questionText": "Türkiye'nin başkenti neresidir?",
+        "answers": ["Ankara", "İstanbul", "İzmir", "Bursa"],
+        "correctAnswerIndex": 0
+    }
+]
