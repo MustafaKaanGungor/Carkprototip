@@ -21,12 +21,13 @@ public class GridSc : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RollWhell();
+        if(Input.GetKeyDown(KeyCode.Space)) {
+            RollWhell();
+        }
     }
     private void RollWhell()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
+        
             if (isGrid)
             {
                 SlideGrid();
@@ -34,14 +35,20 @@ public class GridSc : MonoBehaviour
             isGrid = true;
             GameObject newPlatform = Instantiate(classes[Random.Range(0,classes.Length)],GridSpawnPos.position,Quaternion.identity);
             platforms.Add(newPlatform);
-        }
+        
     }
      public   void SlideGrid()
     {
         
         Debug.Log("Slided");
         for (int i = 0; i < platforms.Count; i++) {
-            platforms[i].transform.Translate(Vector3.left * platformWidth.localScale.x);
+            //platforms[i].transform.Translate(Vector3.left * platformWidth.localScale.x);
+            platforms[i].transform.position += Vector3.left * platformWidth.localScale.x;
+
+            if(platforms[i].transform.position.x < -5) {
+                Destroy(platforms[i].gameObject);
+                platforms.RemoveAt(i);
+            }
         }
     }
 
