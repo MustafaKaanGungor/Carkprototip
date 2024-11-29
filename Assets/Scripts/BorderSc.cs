@@ -15,8 +15,11 @@ public class BorderSc : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("is it touching?");
         if (collision.gameObject.CompareTag("Platform"))
         {
+            Debug.Log("is it destroying?");
+
             Destroy(collision.gameObject);
         }
     }

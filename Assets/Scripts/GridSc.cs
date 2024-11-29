@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GridSc : MonoBehaviour
 {
-    //Borderlar silmiyor :/ ona bakýlcak , örnek sorular json formatýnda eklendi (2 tane)   
+    //Borderlar silmiyor :/ ona bakï¿½lcak , ï¿½rnek sorular json formatï¿½nda eklendi (2 tane)   
     [SerializeField] private Transform GridSpawnPos;
     [SerializeField] private float GridSpeed;
     [SerializeField] public GameObject[] classes;
@@ -13,7 +13,9 @@ public class GridSc : MonoBehaviour
     private bool isGrid = false;
     void Start()
     {
-        
+        for(int i = 0; i < 10; i++) {
+            RollWhell();
+        }
     }
 
     // Update is called once per frame
